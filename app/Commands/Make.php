@@ -62,7 +62,7 @@ class Make extends Command
         $this->line("Wrote config");
         $this->linkConfig($config);
         $this->line("Symlinked config");
-        // $this->restartNginx();
+        $this->restartNginx();
         $this->line("Nginx was restarted");
 
         $this->info("Project setup complete. You may reach it at http://" . $this->fullDomain);
