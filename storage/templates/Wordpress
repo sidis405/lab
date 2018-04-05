@@ -1,0 +1,21 @@
+server {
+        listen   80;
+
+        root LAB_ROOT;
+        index index.php index.html;
+
+        server_name LAB_SERVER_NAME;
+
+        location / {
+                try_files $uri $uri/ /index.php?q=$uri&$args;
+        }
+
+        #location ~ \.php$ {
+        #   include snippets/fastcgi-php.conf;
+        #
+        #   # With php7.0-cgi alone:
+        #   fastcgi_pass 127.0.0.1:9000;
+        #   # With php7.0-fpm:
+        #   fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        #}
+}
