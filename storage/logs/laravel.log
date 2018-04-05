@@ -1,0 +1,20 @@
+[2018-04-05 13:26:44] development.ERROR: Command "app" is not defined.
+
+Did you mean one of these?
+    app:build
+    app:install
+    app:rename {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"app\" is not defined.
+
+Did you mean one of these?
+    app:build
+    app:install
+    app:rename at /Users/sid/Code/web/lab/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /Users/sid/Code/web/lab/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('app')
+#1 /Users/sid/Code/web/lab/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Users/sid/Code/web/lab/vendor/illuminate/console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/sid/Code/web/lab/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /Users/sid/Code/web/lab/vendor/laravel-zero/framework/src/Kernel.php(76): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /Users/sid/Code/web/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
