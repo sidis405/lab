@@ -80,7 +80,7 @@ class Make extends Command
 
     private function writeConfig($config)
     {
-        $fp =  fopen(env('NGINX_SITES_AVAILABLE') . '/' . $this->fullDomain, 'w');
+        $fp =  fopen(env('NGINX_SITES_AVAILABLE') . $this->fullDomain, 'w');
         fwrite($fp, $config);
         fclose($fp);
     }
