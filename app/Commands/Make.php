@@ -28,6 +28,7 @@ class Make extends Command
     protected $repository;
     protected $branch;
 
+    protected $appends;
     protected $fullDomain;
 
     /**
@@ -61,6 +62,12 @@ class Make extends Command
         }
 
         $this->fullDomain = $this->argument('subdomain') . "." . env("BASE_DOMAIN");
+
+        $this->appends = $this->ask('App a path append (ex: build):');
+
+        if (strlen($this->appends) < 1) {
+            $this->appends = "/";
+        }
 
         Storage::append('sites', $this->makeRecord());
 
@@ -142,7 +149,7 @@ class Make extends Command
     {
         $rawConfig = Storage::get('templates/' . $this->type);
 
-        $rawConfig = str_replace("LAB_ROOT", env('WEBROOT') . $this->fullDomain, $rawConfig);
+        $rawConfig = str_replace("LAB_ROOT", env('WEBROOT') . $this->fullDomain . "/" . $this->appends, $rawConfig);
         $rawConfig = str_replace("LAB_SERVER_NAME", $this->fullDomain, $rawConfig);
 
         return $rawConfig;
