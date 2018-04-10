@@ -3,7 +3,6 @@
 namespace App\Commands;
 
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
 
 class Sites extends Command
@@ -33,26 +32,18 @@ class Sites extends Command
 
         $sites = [];
 
+        $this->info("OFFICINE06 Lab v0.1");
+        $this->line("Your Webroot: " . env('WEBROOT'));
+
         foreach (explode("\n", $content) as $row) {
             if (strlen($row) > 5) {
+                $row = str_replace(env('WEBROOT'), '[WEBROOT]/', $row);
                 $sites[] = explode("    ", $row);
             }
         }
 
-        $headers = ['Subdomain', 'Type', 'Webroot', 'Creation Date'];
+        $headers = ['Subdomain', 'Type', 'Webroot', 'Git', 'Repo', 'Branch', 'Creation Date'];
 
         $this->table($headers, $sites);
-    }
-
-    /**
-     * Define the command's schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
-     *
-     * @return void
-     */
-    public function schedule(Schedule $schedule): void
-    {
-        // $schedule->command(static::class)->everyMinute();
     }
 }

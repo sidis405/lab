@@ -24,6 +24,10 @@ class Make extends Command
 
     protected $types;
     protected $type;
+    protected $isGitManaged;
+    protected $repository;
+    protected $branch;
+
     protected $fullDomain;
 
     /**
@@ -43,6 +47,18 @@ class Make extends Command
 
         $this->type = $this->ask('Choose the ID of project:');
         $this->type = $this->types[$this->type -1][1];
+
+        $this->isGitManaged = $this->choice('Would you like to specify a git repository?', ['y', 'n'], 1);
+
+        if ($this->isGitManaged == 'y') {
+            $this->repository = $this->ask("Please paste in your repository url:");
+
+            $this->branch = $this->ask('Specify a branch (default: master):');
+
+            if (strlen($this->branch) < 2) {
+                $this->branch = "master";
+            }
+        }
 
         $this->fullDomain = $this->argument('subdomain') . "." . env("BASE_DOMAIN");
 
@@ -90,6 +106,9 @@ class Make extends Command
         return $this->fullDomain . '    '
         . $this->type . '    '
         . env('WEBROOT') . $this->fullDomain . '    '
+        . $this->isGitManaged . '    '
+        . $this->repository . '    '
+        . $this->branch . '    '
         . Carbon::now()->format('Y-m-d H:i');
     }
 
@@ -97,9 +116,13 @@ class Make extends Command
     {
         mkdir(env('WEBROOT') . $this->fullDomain, 0755, true);
 
-        $fp =  fopen(env('WEBROOT') . $this->fullDomain . '/index.html', 'w');
-        fwrite($fp, str_replace("LAB_SERVER_NAME", $this->fullDomain, Storage::get('index.html')));
-        fclose($fp);
+        if ($this->isGitManaged == 'y') {
+            passthru("git clone " . $this->repository . " " . env('WEBROOT') . $this->fullDomain);
+        } else {
+            $fp =  fopen(env('WEBROOT') . $this->fullDomain . '/index.html', 'w');
+            fwrite($fp, str_replace("LAB_SERVER_NAME", $this->fullDomain, Storage::get('index.html')));
+            fclose($fp);
+        }
     }
 
     private function getTemplates()
