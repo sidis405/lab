@@ -44,9 +44,8 @@ class Update extends Command
 
                 if ($params[3] == "y") {
                     $this->sites[] = [$counter, $params[0]];
+                    $counter++;
                 }
-
-                $counter++;
             }
         }
 
@@ -56,6 +55,7 @@ class Update extends Command
         $this->table($headers, $this->sites);
         $this->site = $this->ask('Choose the ID of project to update from git:');
         $this->site = $this->sites[$this->site - 1][1];
+
 
         foreach (explode("\n", $content) as $row) {
             if (strlen($row) > 5) {
