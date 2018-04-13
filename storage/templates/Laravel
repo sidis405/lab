@@ -1,33 +1,76 @@
 server {
-    listen 80;
-    server_name LAB_SERVER_NAME;
-    root LAB_ROOT;
+        listen 80;
+        root LAB_ROOT;
+        index index.php index.html index.htm;
+        server_name LAB_SERVER_NAME;
 
-    add_header X-Frame-Options "SAMEORIGIN";
-    add_header X-XSS-Protection "1; mode=block";
-    add_header X-Content-Type-Options "nosniff";
 
-    index index.html index.htm index.php;
+    #hide nginx info
+        server_tokens off;
 
-    charset utf-8;
+    #Mime
+        include mime.types;
 
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
+         gzip on;
+        gzip_min_length 100;
+        gzip_comp_level 3;
+        gzip_disable "msie6";
+        gzip_vary on;
+        gzip_proxied any;
+        gzip_buffers 4 16k;
+        gzip_http_version 1.1;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
-    location = /robots.txt  { access_log off; log_not_found off; }
+     #types that should gzip
+        gzip_types application/ecmascript;
+        gzip_types application/javascript;
+        gzip_types application/json;
+        gzip_types application/pdf;
+        gzip_types application/postscript;
+        gzip_types application/x-javascript;
+        gzip_types application/svg+xml;
+        gzip_types image/svg+xml;
+        gzip_types text/css;
+        gzip_types text/csv;
+        gzip_types text/javascript;
+        gzip_types text/plain;
+        gzip_types text/xml;
+        gzip_types image/bmp;
+        gzip_types image/x-icon;
+        gzip_types image/jpeg;
+        gzip_types image/jpg;
+        gzip_types image/pjpeg;
+        gzip_types image/pjpg;
 
-    error_page 404 /index.php;
 
-    location ~ \.php$ {
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
-        fastcgi_index index.php;
-        include fastcgi_params;
-    }
+            # Media: images, icons, video, audio, HTC
+        location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+          expires 1M;
+          access_log off;
+          add_header Cache-Control "public";
+        }
 
-    location ~ /\.(?!well-known).* {
-        deny all;
-    }
+
+        # CSS and Javascript
+        location ~* \.(?:css|js)$ {
+          expires 1y;
+          access_log off;
+          add_header Cache-Control "public";
+        }
+
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ /index.php?$query_string;
+                # Uncomment to enable naxsi on this location
+                # include /etc/nginx/naxsi.rules
+        }
+        location ~ \.php$ {
+                try_files $uri =404;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
+        }
 }
