@@ -2,6 +2,6 @@
 /.idea
 /.vscode
 /.vagrant
-/storage/logs/*
-/storage/sites
+storage/logs/*
+storage/sites
 .env

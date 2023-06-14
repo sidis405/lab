@@ -222,3 +222,68 @@ Did you mean one of these?
 #15 /root/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #16 {main}
 "} 
+[2019-04-27 12:00:54] development.ERROR: A non-numeric value encountered {"exception":"[object] (ErrorException(code: 0): A non-numeric value encountered at /root/lab/app/Commands/Make.php:50)
+[stacktrace]
+#0 /root/lab/app/Commands/Make.php(50): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'A non-numeric v...', '/root/lab/app/C...', 50, Array)
+#1 [internal function]: App\\Commands\\Make->handle()
+#2 /root/lab/vendor/illuminate/container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#3 /root/lab/vendor/illuminate/container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 /root/lab/vendor/illuminate/container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(LaravelZero\\Framework\\Application), Array, Object(Closure))
+#5 /root/lab/vendor/illuminate/container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(LaravelZero\\Framework\\Application), Array, Array, NULL)
+#6 /root/lab/vendor/illuminate/console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#7 /root/lab/vendor/symfony/console/Command/Command.php(252): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /root/lab/vendor/illuminate/console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /root/lab/vendor/symfony/console/Application.php(865): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /root/lab/vendor/symfony/console/Application.php(241): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Commands\\Make), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /root/lab/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /root/lab/vendor/illuminate/console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /root/lab/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /root/lab/vendor/laravel-zero/framework/src/Kernel.php(76): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /root/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 {main}
+"} 
+[2019-10-23 08:31:16] development.ERROR: Not enough arguments (missing: "subdomain"). {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Not enough arguments (missing: \"subdomain\"). at /root/lab/vendor/symfony/console/Input/Input.php:76)
+[stacktrace]
+#0 /root/lab/vendor/symfony/console/Command/Command.php(247): Symfony\\Component\\Console\\Input\\Input->validate()
+#1 /root/lab/vendor/illuminate/console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#2 /root/lab/vendor/symfony/console/Application.php(865): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /root/lab/vendor/symfony/console/Application.php(241): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Commands\\Make), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /root/lab/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /root/lab/vendor/illuminate/console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /root/lab/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /root/lab/vendor/laravel-zero/framework/src/Kernel.php(76): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /root/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 {main}
+"} 
+[2020-02-10 10:12:58] development.ERROR: Command "updte" is not defined.
+
+Did you mean this?
+    update {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"updte\" is not defined.
+
+Did you mean this?
+    update at /root/lab/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /root/lab/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('updte')
+#1 /root/lab/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /root/lab/vendor/illuminate/console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /root/lab/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /root/lab/vendor/laravel-zero/framework/src/Kernel.php(76): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /root/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2023-05-30 08:12:38] development.ERROR: Command "sistes" is not defined.
+
+Did you mean this?
+    sites {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"sistes\" is not defined.
+
+Did you mean this?
+    sites at /root/lab/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /root/lab/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('sistes')
+#1 /root/lab/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /root/lab/vendor/illuminate/console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /root/lab/vendor/laravel-zero/foundation/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /root/lab/vendor/laravel-zero/framework/src/Kernel.php(76): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /root/lab/lab(37): LaravelZero\\Framework\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 

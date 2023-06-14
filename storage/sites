@@ -1,24 +1,4 @@
 
-ristorante34.officine06lab.com    Static    /var/www/ristorante34.officine06lab.com    y    https://github.com/Toms15/ris34.git    master    2018-04-10 20:52
-stern.officine06lab.com    Static    /var/www/stern.officine06lab.com    y    https://github.com/Toms15/stern.git    master    2018-04-11 09:36
-
-corsi-praxi.officine06lab.com    Laravel    /var/www/corsi-praxi.officine06lab.com    y    https://github.com/sidis405/praxi-corsi.git    master    2018-04-13 16:25
-nikis.officine06lab.com    Wordpress    /var/www/nikis.officine06lab.com    y    https://github.com/Toms15/nikis.git    master    2018-04-17 10:57
-caffenapoli.officine06lab.com    Static    /var/www/caffenapoli.officine06lab.com    y    https://github.com/Toms15/cafna.git    master    2018-05-12 15:54
-theline.officine06lab.com    Wordpress    /var/www/theline.officine06lab.com    y    https://github.com/Toms15/theline    master    2018-07-23 08:52
-theline-ab.officine06lab.com    Wordpress    /var/www/theline-ab.officine06lab.com    y    https://github.com/Toms15/theline.git    master    2018-07-23 08:56
-xmas-ms-2018.officine06lab.com    Static    /var/www/xmas-ms-2018.officine06lab.com    y    https://github.com/sidis405/christmas-morrow-2018    master    2018-11-23 10:15
-static-site.officine06lab.com    Static    /var/www/static-site.officine06lab.com    y    https://github.com/sidis405/laravel-site    master    2018-11-24 10:35
-laravel-site.officine06lab.com    Laravel    /var/www/laravel-site.officine06lab.com    y    https://github.com/sidis405/laravel-site    master    2018-11-24 10:35
-morrowsodali.officine06lab.com    Laravel    /var/www/morrowsodali.officine06lab.com    y    https://github.com/sidis405/new-morrowsodali    develop    2018-12-10 14:40
-solocrudo.officine06lab.com    Wordpress    /var/www/solocrudo.officine06lab.com    y    https://github.com/sidis405/solocrudo    master    2018-12-12 11:51
-
-casamia.officine06lab.com    Wordpress    /var/www/casamia.officine06lab.com    y    https://github.com/Toms15/casamia    master    2019-01-23 17:39
-molove.officine06lab.com    Laravel    /var/www/molove.officine06lab.com    y    https://github.com/Toms15/molove.git    master    2019-02-01 10:27
-morrowsodali-v2.officine06lab.com    Laravel    /var/www/morrowsodali-v2.officine06lab.com    y    https://github.com/sidis405/new-morrowsodali    v2    2019-02-15 11:03
-morrowsodali-v3.officine06lab.com    Laravel    /var/www/morrowsodali-v3.officine06lab.com    y    git@github.com:sidis405/new-morrowsodali.git    v3    2019-02-15 16:49
-saporicatering.officine06lab.com    Wordpress    /var/www/saporicatering.officine06lab.com    y    https://github.com/Toms15/sapori.git    master    2019-02-21 10:16
-
-trustylux-landing.officine06lab.com    Laravel    /var/www/trustylux-landing.officine06lab.com    y    https://github.com/sidis405/trustylux.git    preview    2019-03-22 10:11
-
-ms-static.officine06lab.com    Static    /var/www/ms-static.officine06lab.com    y    https://github.com/sidis405/ms-static    master    2019-03-22 15:26
+slidable.officine06lab.com    Static    /var/www/slidable.officine06lab.com    y    https://github.com/Toms15/slidable    master    2020-05-22 14:08
+nikisresort.officine06lab.com    Wordpress    /var/www/nikisresort.officine06lab.com    y    git@github.com:Toms15/nikisresort.git    staging    2023-02-28 19:41
+lamorellina.officine06lab.com    Wordpress    /var/www/lamorellina.officine06lab.com    y    git@github.com:Toms15/mmfarmhouse.git    main    2023-05-02 16:13
